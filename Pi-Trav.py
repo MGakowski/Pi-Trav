@@ -1,10 +1,12 @@
+__author__ = 'MGakowski (Matthew Gakowski)'
+
 import tkinter
 import turtle
 import random
 import time
 
 window = tkinter.Tk()
-window.title("Pi Trav settings")
+window.title("Pi-Trav settings")
 window.geometry("300x360")
 window.resizable(width=False, height=False)
 window.configure(background="#11303D")
