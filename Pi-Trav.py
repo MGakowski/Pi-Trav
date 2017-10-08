@@ -1,13 +1,11 @@
-__author__ = 'MGakowski (Matthew Gakowski)'
-
 import tkinter
 import turtle
 import random
 import time
 
 window = tkinter.Tk()
-window.title("Pi-Trav settings")
-window.geometry("300x360")
+window.title("Pi Trav settings")
+window.geometry("300x400")
 window.resizable(width=False, height=False)
 window.configure(background="#11303D")
 window.wm_iconbitmap('pico.ico')
@@ -26,6 +24,7 @@ def process():
     my_turtle.speed(int(entSpeed.get()))
     turtle.title("Pi Trav")
     turtle.screensize(10000, 10000)
+    my_turtle.pensize(int(entLnthick.get()))
 
     f = open('pimillion.txt', 'r')
     pi = str(f.read())
@@ -65,6 +64,8 @@ lblSpeed = tkinter.Label(window, text="Walking speed? (0=fast,1-9=slow)", fg="#F
 entSpeed = tkinter.Entry(window)
 lblColchange = tkinter.Label(window, text="Number to change colour on? (0-9)", fg="#FFFFFF", bg="#11303D")
 entColchange = tkinter.Entry(window)
+lblLnthick = tkinter.Label(window, text="Width of line?", fg="#FFFFFF", bg="#11303D")
+entLnthick = tkinter.Entry(window)
 lblTime = tkinter.Label(window, textvariable=timex, fg="#FFFFFF", bg="#11303D")
 
 btn = tkinter.Button(window, text="Process", command=process, fg="#11303D", bg="#74D8CC")
@@ -77,6 +78,8 @@ lblSpeed.pack()
 entSpeed.pack(pady=2)
 lblColchange.pack()
 entColchange.pack(pady=2)
+lblLnthick.pack()
+entLnthick.pack(pady=2)
 
 btn.pack(pady=10)
 lblTime.pack()
